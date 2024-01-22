@@ -1,1 +1,125 @@
-<p>invoice works!</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="invoice.component.css">
+    </head>
+    <body>
+        <div class="invoice-wrapper">
+            <div class="invoice">
+                <div class="invoice-container">
+                    <div class="invoice-head">
+                        <div class="invoice-head-top">
+                            <div class="invoice-head-top-left text-start">
+                                <h1>Logo</h1>
+                            </div>
+                            <div class="invoice-head-top-right text-end">
+                                <h3>Invoice</h3>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="invoice-head-middle">
+                            <div class="invoice-head-middle-left text-start">
+                                <p>
+                                    <span class="text-bold">Date</span>: 01/01/24
+                                </p>
+                            </div>
+                            <div class="invoice-head-middle-right text-end">
+                                <p><span class="text-bold">Invoice No:</span></p>
+                            </div>
+                        </div>
+                        <div class="hr"></div>
+                        <div class="invoice-head-bottom">
+                            <div class="invoice-head-bottom-left">
+                                <ul>
+                                    <li class="text-bold">Customer Information</li>
+                                    <li>Full Name: </li>
+                                    <li>Phone Number: </li>
+                                    <li>Email: </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overflow-view">
+                        <div class="invoice-body">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td class="text-bold">S.N</td>
+                                        <td class="text-bold">Room No</td>
+                                        <td class="text-bold">Room Type</td>
+                                        <td class="text-bold">Arrival Date</td>
+                                        <td class="text-bold">Departure Date</td>
+                                        <td class="text-bold">Rate</td>
+                                        <td class="text-bold">Amount</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>101</td>
+                                        <td>Deluxe Room</td>
+                                        <td>01/01/24</td>
+                                        <td>02/01/24</td>
+                                        <td>Rs 1000</td>
+                                        <td class="text-end">Rs 1000</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>101</td>
+                                        <td>Deluxe Room</td>
+                                        <td>01/01/24</td>
+                                        <td>02/01/24</td>
+                                        <td>Rs 1000</td>
+                                        <td class="text-end">Rs 1000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="invoice-body-bottom">
+                                <div class="invoice-body-info-item border-bottom">
+                                    <div class="info-item-td text-end text-bold">
+                                        Sub Total:
+                                    </div>
+                                    <div class="info-item-td text-end">
+                                        Rs 2000
+                                    </div>
+                                </div>
+                                <div class="invoice-body-info-item border-bottom">
+                                    <div class="info-item-td text-end text-bold">
+                                        Discount:
+                                    </div>
+                                    <div class="info-item-td text-end">
+                                        Rs 0
+                                    </div>
+                                </div>
+                                <div class="invoice-body-info-item ">
+                                    <div class="info-item-td text-end text-bold">
+                                        Sub Total:
+                                    </div>
+                                    <div class="info-item-td text-end">
+                                        Rs 2000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-foot text-center">
+                        <div class="invoice-btn" onclick="printInvoice()">
+                            <span>Print</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function printInvoice() {
+        window.print();
+    }
+</script>
