@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: #00357bb3;
+    padding: 25px 30px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500; 
+}
+
+.container form .guest-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .guest-details .input-box {
+    margin: 15px 0 10px 0 ;
+    width: calc(100% / 2 - 20px);
+}
+
+.guest-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.guest-details .input-box input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    font-size: 15px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.guest-details .input-box input:focus, 
+.guest-details .input-box input:valid { 
+    border-color: gold; 
+}
+
+.remarks {
+    color: #989898;
+    height: 110px;
+    width: 100%;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: #00357b;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: gold;
+}
+
+form .button input:hover {
+    box-shadow: inset 1px 1px 16px rgb(171, 146, 1);
+}
