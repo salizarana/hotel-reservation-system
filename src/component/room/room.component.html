@@ -11,34 +11,18 @@
         <div class="container">
             <div class="list">
                 <h2>5 Rooms Found</h2>
-                <div class="room">
+                <div class="room" *ngFor="let room of rooms">
                     <div class="room-img">
-                        <img src="room.png">
+                        <img [src]="room.photos[0]">
                     </div>
                     <div class="room-info">
-                        <h3>Deluxe Room</h3>
-                        <p> Immerse yourself in luxury with tastefully designed furnishings that blend style and comfort seamlessly.
-                            Immerse yourself in luxury with tastefully designed furnishings that blend style and comfort seamlessly.
-                            Immerse yourself in luxury with tastefully designed furnishings that blend style and comfort seamlessly.
+                        <h3>{{room.roomType}}</h3>
+                        <p> {{room.description}}
                         </p>
-                        <p>King Size Bed / Attach Bathroom / Balcony</p>
+                        <p>{{room.features}}</p>
                         <div class="room-price">
-                            <p>2 Guest</p>
-                            <h4>Rs 1200 <span>/ night</span></h4>
-                            <button type="button">Reserve</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="room">
-                    <div class="room-img">
-                        <img src="room.png">
-                    </div>
-                    <div class="room-info">
-                        <h3>Deluxe Room</h3>
-                        <p>King Size Bed / Attach Bathroom / Balcony</p>
-                        <div class="room-price">
-                            <p>2 Guest</p>
-                            <h4>Rs 1200 <span>/ night</span></h4>
+                            <p>{{room.capacity}} Guest</p>
+                            <h4>Rs {{room.pricePerNight}} <span>/ night</span></h4>
                             <button type="button">Reserve</button>
                         </div>
                     </div>

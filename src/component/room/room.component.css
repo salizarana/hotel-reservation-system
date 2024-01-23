@@ -1,13 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
-    margin-top: 50px;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;  
 }
 
+.left-col {
+    flex-basis: 70%;
+}
+
 .list {
     align-items: center;
-    margin: 0 150px;
+    margin: 50px 150px;
 }
 .room {
     display: flex;
@@ -18,11 +28,11 @@
 }
 
 .room-img {
-    flex-basis: 25%;
+    flex-basis: 40%;
 }
 
 .room-info {
-    flex-basis: 70%;
+    flex-basis: 55%;
 }
 
 .room-img img {
