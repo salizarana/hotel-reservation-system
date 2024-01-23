@@ -9,7 +9,7 @@
     <body>
         <div class="invoice-wrapper">
             <div class="invoice">
-                <div class="invoice-container">
+                <div class="invoice-container" *ngFor="let invoice of invoice">
                     <div class="invoice-head">
                         <div class="invoice-head-top">
                             <div class="invoice-head-top-left text-start">
@@ -23,11 +23,11 @@
                         <div class="invoice-head-middle">
                             <div class="invoice-head-middle-left text-start">
                                 <p>
-                                    <span class="text-bold">Date</span>: 01/01/24
+                                    <span class="text-bold">Date</span>: {{invoice.date}}
                                 </p>
                             </div>
                             <div class="invoice-head-middle-right text-end">
-                                <p><span class="text-bold">Invoice No:</span></p>
+                                <p><span class="text-bold">Invoice No: {{invoice.serialNumber}}</span></p>
                             </div>
                         </div>
                         <div class="hr"></div>
@@ -35,9 +35,9 @@
                             <div class="invoice-head-bottom-left">
                                 <ul>
                                     <li class="text-bold">Customer Information</li>
-                                    <li>Full Name: </li>
-                                    <li>Phone Number: </li>
-                                    <li>Email: </li>
+                                    <li>Full Name: {{invoice.fullName}}</li>
+                                    <li>Phone Number: {{invoice.phoneNumber}}</li>
+                                    <li>Email: {{invoice.email}}</li>
                                 </ul>
                             </div>
                         </div>
@@ -58,13 +58,13 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        <td>101</td>
-                                        <td>Deluxe Room</td>
-                                        <td>01/01/24</td>
-                                        <td>02/01/24</td>
-                                        <td>Rs 1000</td>
-                                        <td class="text-end">Rs 1000</td>
+                                        <td>{{invoice.serialNumber}}</td>
+                                        <td>{{invoice.roomNumber}}</td>
+                                        <td>{{invoice.roomType}}</td>
+                                        <td>{{invoice.arrivalDate}}</td>
+                                        <td>{{invoice.departureDate}}</td>
+                                        <td>Rs {{invoice.rate}}</td>
+                                        <td class="text-end">Rs {{invoice.amount}}</td>
                                     </tr>
                                 </tbody>
                                 <tbody>
@@ -85,7 +85,7 @@
                                         Sub Total:
                                     </div>
                                     <div class="info-item-td text-end">
-                                        Rs 2000
+                                        Rs {{invoice.subTotal}}
                                     </div>
                                 </div>
                                 <div class="invoice-body-info-item border-bottom">
@@ -93,15 +93,15 @@
                                         Discount:
                                     </div>
                                     <div class="info-item-td text-end">
-                                        Rs 0
+                                        Rs {{invoice.discount}}
                                     </div>
                                 </div>
                                 <div class="invoice-body-info-item ">
                                     <div class="info-item-td text-end text-bold">
-                                        Sub Total:
+                                        Total:
                                     </div>
                                     <div class="info-item-td text-end">
-                                        Rs 2000
+                                        Rs {{invoice.total}}
                                     </div>
                                 </div>
                             </div>
