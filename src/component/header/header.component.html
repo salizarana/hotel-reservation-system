@@ -10,10 +10,10 @@
             <a href="#" class="logo">Logo</a>
 
             <nav class="navbar">
-                    <a href="#" class="active">Home</a>
-                    <a href="#">Resevation</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                    <a [routerLink]="['/home']" routerLinkActive="active-link">Home</a>
+                    <a [routerLink]="['/reservation']">Resevation</a>
+                    <a [routerLink]="['/about-us']">About</a>
+                    <a [routerLink]="['/contact-us']">Contact</a>
             </nav>
         </header>
     </body>
