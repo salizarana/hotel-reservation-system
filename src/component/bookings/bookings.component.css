@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: right;
+    margin-right: 80px;
+}
+
+.list {
+    margin: 70px;
+}
+
+.list-left {
+    margin-top: 15px;
+}
+
+.list-left table td,
+.list-left table thead{
+    padding: 8px;
+}
+
+.list-left table thead {
+    font-size: 17px;
+    color: #002060;
+    font-weight: 550;
+}
+
+button{
+    padding: 8px 8px;
+    border: none;
+    margin-top: 25px;
+    margin-left: 8px;
+    background-color: gold;
+    border-radius: 7px;
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
