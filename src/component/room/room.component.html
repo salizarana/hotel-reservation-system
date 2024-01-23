@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="room.component.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="list">
-                <h2>5 Rooms Found</h2>
-                <div class="room" *ngFor="let room of rooms">
-                    <div class="room-img">
-                        <img [src]="room.photos[0]">
-                    </div>
-                    <div class="room-info">
-                        <h3>{{room.roomType}}</h3>
-                        <p> {{room.description}}
-                        </p>
-                        <p>{{room.features}}</p>
-                        <div class="room-price">
-                            <p>{{room.capacity}} Guest</p>
-                            <h4>Rs {{room.pricePerNight}} <span>/ night</span></h4>
-                            <button type="button">Reserve</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+  <div class="list">
+    <h2>5 Rooms Found</h2>
+    <div class="room" *ngFor="let room of rooms">
+      <div class="room-img">
+        <img [src]="room.photos[0]" />
+      </div>
+      <div class="room-info">
+        <h3>{{ room.roomType }}</h3>
+        <p>{{ room.description }}</p>
+        <p>{{ room.features }}</p>
+        <div class="room-price">
+          <p>{{ room.capacity }} Guest</p>
+          <h4>Rs {{ room.pricePerNight }} <span>/ night</span></h4>
+          <button type="button">Reserve</button>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+  </div>
+</div>
