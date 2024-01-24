@@ -7,6 +7,7 @@ import { ReservationComponent } from '../component/reservation/reservation.compo
 import { NgModule } from '@angular/core';
 import { RoomComponent } from '../component/room/room.component';
 import { InvoiceComponent } from '../component/invoice/invoice.component';
+import { ReservationDetailComponent } from '../component/reservation-detail/reservation-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,5 +16,7 @@ export const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'rooms', component: RoomComponent },
+  { path: 'invoice', component: InvoiceComponent },
+  { path: 'reservation-detail', component: ReservationDetailComponent },
   { path: 'invoice', component: InvoiceComponent },
 ];
