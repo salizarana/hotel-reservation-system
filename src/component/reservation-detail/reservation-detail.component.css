@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
+.reservation-detail {
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -13,6 +13,9 @@ body {
 }
 
 .container {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
     max-width: 700px;
     width: 100%;
     background: #00357bb3;

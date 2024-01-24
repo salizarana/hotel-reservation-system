@@ -6,13 +6,10 @@
 
 .container {
     margin-top: 70px;
+    margin-bottom: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;  
-}
-
-.left-col {
-    flex-basis: 70%;
 }
 
 .list {
@@ -60,6 +57,7 @@
 }
 
 .room button{
+    margin-top: 10px;
     border: none;
     padding: 10px 20px;
     background-color: gold;
