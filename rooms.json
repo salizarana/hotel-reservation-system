@@ -1,0 +1,29 @@
+{
+    "roomNumber": "100",
+    "roomType": "Deluxe Room",
+    "capacity": 2,
+    "pricePerNight": 1000,
+    "isBooked": true,
+    "description": "First floor room",
+    "photos": [
+      "https://i.pinimg.com/564x/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg"
+    ],
+    "features": [
+      "AC", "Balcony"
+    ]
+  },
+
+  {
+    "roomNumber": "101",
+    "roomType": "Deluxe Room",
+    "capacity": 3,
+    "pricePerNight": 1000,
+    "isBooked": true,
+    "description": "First floor room",
+    "photos": [
+      "https://i.pinimg.com/564x/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg"
+    ],
+    "features": [
+      "AC", "Balcony"
+    ]
+  }
