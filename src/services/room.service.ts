@@ -10,6 +10,8 @@ export class RoomService {
   constructor(private http: HttpClient) {}
 
   getRoomList(queryParams: any = {}) {
-    return this.http.get<any>(this.apiUrl, { params: queryParams });
+    return this.http.get<any>(this.apiUrl, {
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    });
   }
 }
