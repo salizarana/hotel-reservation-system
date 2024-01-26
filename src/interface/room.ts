@@ -1,4 +1,5 @@
 export interface Room {
+  id: number;
   roomNumber: number;
   roomType: string;
   capacity: number;
@@ -7,4 +8,5 @@ export interface Room {
   isBooked: boolean;
   description: string;
   features: string[];
+  isSelected?: boolean;
 }
