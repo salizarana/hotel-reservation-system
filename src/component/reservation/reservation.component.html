@@ -47,14 +47,35 @@
 
     <div class="wrapper">
       <div class="list">
-        <h2>5 Rooms Found</h2>
+        <h2>{{ rooms.length }} Rooms Found</h2>
+        <table>
+          <tbody>
+            <tr *ngFor="let room of rooms">
+              <td>
+                <app-room [room]="room"></app-room>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  (click)="
+                    room.isSelected
+                      ? unselectRoom(room.id)
+                      : selectRoom(room.id)
+                  "
+                >
+                  {{ room.isSelected ? "Unselect" : "Select" }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div *ngFor="let room of rooms">
+        <!-- <div *ngFor="let room of rooms">
           <app-room [room]="room"></app-room>
-        </div>
+        </div> -->
       </div>
       <div class="bookings">
-        <app-bookings></app-bookings>
+        <app-bookings [rooms]="selectedRooms"></app-bookings>
       </div>
     </div>
   </div>

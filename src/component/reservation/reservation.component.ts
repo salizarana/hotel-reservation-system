@@ -5,11 +5,19 @@ import { CommonModule } from '@angular/common';
 import { Room } from '../../interface/room';
 import { BookingsComponent } from '../bookings/bookings.component';
 import { RoomService } from '../../services/room.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-reservation',
   standalone: true,
-  imports: [FormsModule, RoomComponent, CommonModule, BookingsComponent],
+  imports: [
+    FormsModule,
+    RoomComponent,
+    CommonModule,
+    BookingsComponent,
+    HttpClientModule,
+  ],
+  providers: [RoomService],
   templateUrl: './reservation.component.html',
   styleUrl: './reservation.component.css',
 })
@@ -57,14 +65,39 @@ export class ReservationComponent implements OnInit {
     photos: '',
     features: '',
   };
-
+  selectedRooms: Room[] = [];
   constructor(private roomService: RoomService) {}
 
   ngOnInit() {
-    // this.getRoomList();
+    this.roomService.getRoomList().subscribe((response) => {
+      console.log(response);
+      this.rooms = response;
+    });
   }
 
   onSubmit(searchForm: NgForm) {
     console.log(searchForm.value);
+  }
+
+  selectRoom(roomId: number) {
+    // let selectedRoom = { ..room, isSelected: true }
+
+    console.log(roomId);
+    this.rooms.map((room) => {
+      if (room.id == roomId) {
+        room.isSelected = true;
+        this.selectedRooms.push(room);
+      }
+      return room;
+    });
+  }
+
+  unselectRoom(roomId: number) {
+    let result = this.selectedRooms.filter((room) => room.id != roomId);
+    this.selectedRooms = result;
+    console.log(roomId);
+    this.rooms.map((room) => {
+      room.isSelected = false;
+    });
   }
 }
