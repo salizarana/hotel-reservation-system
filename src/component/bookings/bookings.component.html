@@ -1,7 +1,8 @@
 <div class="container">
   <div class="list">
     <h3>Selected Rooms</h3>
-    <div class="list-left">
+    <div *ngIf="rooms.length == 0">No rooms selected yet.</div>
+    <div class="list-left" *ngIf="rooms.length > 0">
       <table>
         <thead>
           <tr>
@@ -11,10 +12,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Deluxe Room</td>
-            <td>Rs 1000</td>
+          <tr *ngFor="let room of rooms; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ room.roomType }}</td>
+            <td>Rs {{ room.pricePerNight }}</td>
           </tr>
         </tbody>
       </table>
