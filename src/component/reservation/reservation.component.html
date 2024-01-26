@@ -1,42 +1,61 @@
 <section class="reservation">
   <div class="container">
-    <div class="text">
-      <h1><span>Book</span> Your Rooms</h1>
+    <div class="search">
+      <div class="text">
+        <h1><span>Book</span> Your Rooms</h1>
+      </div>
+      <div class="form">
+        <form
+          class="grid"
+          #searchForm="ngForm"
+          (ngSubmit)="onSubmit(searchForm)"
+        >
+          <input
+            type="date"
+            placeholder="Arrival Date"
+            name="checkInDate"
+            #checkInDate="ngModel"
+            ngModel
+            required
+          />
+          <input
+            type="date"
+            placeholder="Departure Date"
+            name="checkOutDate"
+            #checkOutDate="ngModel"
+            ngModel
+            required
+          />
+          <input
+            type="number"
+            placeholder="No. of Guests"
+            name="guestCount"
+            #guestCount="ngModel"
+            ngModel
+          />
+          <input
+            type="number"
+            placeholder="No. of Rooms"
+            name="roomCount"
+            #roomCount="ngModel"
+            ngModel
+          />
+          <input type="submit" value="CHECK AVAILABILITY" class="button" />
+        </form>
+      </div>
     </div>
-    <div class="form">
-      <form class="grid" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
-        <input
-          type="date"
-          placeholder="Arrival Date"
-          name="checkInDate"
-          #checkInDate="ngModel"
-          ngModel
-          required
-        />
-        <input
-          type="date"
-          placeholder="Departure Date"
-          name="checkOutDate"
-          #checkOutDate="ngModel"
-          ngModel
-          required
-        />
-        <input
-          type="number"
-          placeholder="No. of Guests"
-          name="guestCount"
-          #guestCount="ngModel"
-          ngModel
-        />
-        <input
-          type="number"
-          placeholder="No. of Rooms"
-          name="roomCount"
-          #roomCount="ngModel"
-          ngModel
-        />
-        <input type="submit" value="CHECK AVAILABILITY" />
-      </form>
+
+    <div class="wrapper">
+      <div class="list">
+        <h2>5 Rooms Found</h2>
+
+        <div *ngFor="let room of rooms">
+          <app-room [room]="room"></app-room>
+        </div>
+      </div>
+      <div class="bookings">
+        <app-bookings></app-bookings>
+      </div>
     </div>
   </div>
 </section>

@@ -1,5 +1,4 @@
-.container {
-    height: 100vh;
+.search {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,3 +36,32 @@ input {
 .reservation input:nth-last-child(1){
     background: gold;
 }
+
+.room-component {
+    align-items: left;
+}
+
+.reservation input:nth-last-child(1):hover {
+    background:  #00357b;
+    color: #ffffff;
+}
+
+.container .list {
+    justify-content: left;
+    max-width: 1200px;
+    margin: 50px 20px 50px 70px;
+}
+
+.list {
+    flex-basis: 65%;
+}
+
+.bookings {
+    flex-basis: 26%;
+}
+
+.wrapper {
+    display: flex;
+
+}
+

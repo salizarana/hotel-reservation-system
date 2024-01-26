@@ -15,16 +15,18 @@
     text-align: center;
     color: white;
     margin-top: -27px;
-    font-size: 40px;
+    font-size: 45px;
 }
 
 .button {
+    font-size: 22px;
     border: none;
     background-color: gold;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 20px;
     color: black;
     transition: .4s;
+    text-decoration: none;
 }
 
 .button:hover {
