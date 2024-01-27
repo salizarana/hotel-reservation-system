@@ -14,6 +14,8 @@
             type="date"
             placeholder="Arrival Date"
             name="checkInDate"
+            [ngModel]="searchParams.checkInDate | date : 'yyyy-MM-dd'"
+            (ngModelChange)="searchParams.checkInDate = $event"
             #checkInDate="ngModel"
             ngModel
             required
@@ -22,6 +24,8 @@
             type="date"
             placeholder="Departure Date"
             name="checkOutDate"
+            [ngModel]="searchParams.checkOutDate | date : 'yyyy-MM-dd'"
+            (ngModelChange)="searchParams.checkOutDate = $event"
             #checkOutDate="ngModel"
             ngModel
             required
@@ -30,6 +34,8 @@
             type="number"
             placeholder="No. of Guests"
             name="guestCount"
+            min="1"
+            [(ngModel)]="searchParams.guestCount"
             #guestCount="ngModel"
             ngModel
           />
@@ -37,6 +43,8 @@
             type="number"
             placeholder="No. of Rooms"
             name="roomCount"
+            min="1"
+            [(ngModel)]="searchParams.roomCount"
             #roomCount="ngModel"
             ngModel
           />

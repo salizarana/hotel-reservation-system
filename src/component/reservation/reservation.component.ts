@@ -6,6 +6,7 @@ import { Room } from '../../interface/room';
 import { BookingsComponent } from '../bookings/bookings.component';
 import { RoomService } from '../../services/room.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchParam } from '../../interface/searchParam';
 
 @Component({
   selector: 'app-reservation',
@@ -57,13 +58,19 @@ export class ReservationComponent implements OnInit {
     //   features: ['Attach Bathroom', 'Balcony'],
     // },
   ];
-  searchParams = {
-    roomType: '',
-    capacity: '',
-    pricePerNight: '',
-    description: '',
-    photos: '',
-    features: '',
+
+  tomorrow = (): Date => {
+    const today = new Date();
+    today.setDate(today.getDate() + 1);
+    return today;
+  };
+
+  today = new Date();
+  searchParams: SearchParam = {
+    checkInDate: this.today,
+    checkOutDate: this.tomorrow(),
+    guestCount: 0,
+    roomCount: 0,
   };
   selectedRooms: Room[] = [];
   constructor(private roomService: RoomService) {}
