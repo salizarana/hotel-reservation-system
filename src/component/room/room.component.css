@@ -57,6 +57,10 @@
     font-weight: 500;
 }
 
+.description {
+    text-align: justify;
+}
+
 .room button{
     margin-top: 15px;
     border: none;
