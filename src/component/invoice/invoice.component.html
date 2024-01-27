@@ -13,12 +13,12 @@
         <div class="hr"></div>
         <div class="invoice-head-middle">
           <div class="invoice-head-middle-left text-start">
-            <p><span class="text-bold">Date</span>: {{ invoice.date }}</p>
+            <p><span class="text-bold">Date</span>: {{ invoice.createdAt }}</p>
           </div>
           <div class="invoice-head-middle-right text-end">
             <p>
               <span class="text-bold"
-                >Invoice No: {{ invoice.serialNumber }}</span
+                >Invoice No: {{ invoice.reservationId }}</span
               >
             </p>
           </div>
@@ -28,9 +28,15 @@
           <div class="invoice-head-bottom-left">
             <ul>
               <li class="text-bold">Customer Information</li>
-              <li>Full Name: {{ invoice.fullName }}</li>
-              <li>Phone Number: {{ invoice.phoneNumber }}</li>
-              <li>Email: {{ invoice.email }}</li>
+              <li>
+                Full Name:
+                {{ invoice.guest.firstName + invoice.guest.lastName }}
+              </li>
+              <li>Phone Number: {{ invoice.guest.phone }}</li>
+              <li>Email: {{ invoice.guest.email }}</li>
+              <li>Check In Date: {{ invoice.checkInDate }}</li>
+              <li>Check Out Date: {{ invoice.checkOutDate }}</li>
+              <li>Total Days: {{ invoice.nightCount }}</li>
             </ul>
           </div>
         </div>
@@ -41,49 +47,44 @@
             <thead>
               <tr>
                 <td class="text-bold">S.N</td>
-                <td class="text-bold">Room No</td>
                 <td class="text-bold">Room Type</td>
-                <td class="text-bold">Arrival Date</td>
-                <td class="text-bold">Departure Date</td>
                 <td class="text-bold">Rate</td>
                 <td class="text-bold">Amount</td>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{{ invoice.serialNumber }}</td>
-                <td>{{ invoice.roomNumber }}</td>
-                <td>{{ invoice.roomType }}</td>
-                <td>{{ invoice.arrivalDate }}</td>
-                <td>{{ invoice.departureDate }}</td>
-                <td>Rs {{ invoice.rate }}</td>
-                <td class="text-end">Rs {{ invoice.amount }}</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>2</td>
-                <td>101</td>
-                <td>Deluxe Room</td>
-                <td>01/01/24</td>
-                <td>02/01/24</td>
-                <td>Rs 1000</td>
-                <td class="text-end">Rs 1000</td>
+              <tr *ngFor="let room of invoice.roomReserved; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ room.roomType }}</td>
+                <td>{{ room.ratePerNight }}</td>
+                <td>{{ room.ratePerNight * invoice.nightCount }}</td>
               </tr>
             </tbody>
           </table>
           <div class="invoice-body-bottom">
             <div class="invoice-body-info-item border-bottom">
               <div class="info-item-td text-end text-bold">Sub Total:</div>
-              <div class="info-item-td text-end">Rs {{ invoice.subTotal }}</div>
+              <div class="info-item-td text-end">
+                Rs {{ invoice.grossTotal }}
+              </div>
             </div>
             <div class="invoice-body-info-item border-bottom">
-              <div class="info-item-td text-end text-bold">Discount:</div>
-              <div class="info-item-td text-end">Rs {{ invoice.discount }}</div>
+              <div class="info-item-td text-end text-bold">Discount %:</div>
+              <div class="info-item-td text-end">
+                {{ invoice.discountPercent }}%
+              </div>
+            </div>
+            <div class="invoice-body-info-item border-bottom">
+              <div class="info-item-td text-end text-bold">
+                Discount Amount:
+              </div>
+              <div class="info-item-td text-end">
+                Rs {{ invoice.discountPercent }}
+              </div>
             </div>
             <div class="invoice-body-info-item">
               <div class="info-item-td text-end text-bold">Total:</div>
-              <div class="info-item-td text-end">Rs {{ invoice.total }}</div>
+              <div class="info-item-td text-end">Rs {{ invoice.netTotal }}</div>
             </div>
           </div>
         </div>

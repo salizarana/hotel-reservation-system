@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Invoice } from '../../interface/invoice';
+import { InvoiceResponse } from '../../interface/invoice';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,23 +11,37 @@ import { CommonModule } from '@angular/common';
 })
 export class InvoiceComponent {
   constructor() {}
-  invoice: Invoice[] = [
+  invoice: InvoiceResponse[] = [
     {
-      date: '01/01/2024',
-      invoiceNumber: 10001,
-      fullName: 'Saliza Rana Magar',
-      phoneNumber: 9811111111,
-      email: 'saliza@gmail.com',
-      serialNumber: 1,
-      roomNumber: 101,
-      roomType: 'Deluxe Room',
-      arrivalDate: '01/02/2014',
-      departureDate: '01/03/2024',
-      rate: 1000,
-      amount: 1000,
-      subTotal: 1000,
-      discount: 0,
-      total: 1000,
+      reservationId: 10001,
+      guest: {
+        firstName: 'Saliza',
+        lastName: 'Rana',
+        phone: '9811111111',
+        email: 'saliza@gmail.com',
+        address: 'Kumaripati',
+      },
+      roomReserved: [
+        {
+          id: 11,
+          roomId: 1,
+          roomType: 'Single',
+          ratePerNight: 1000,
+        },
+        {
+          id: 11,
+          roomId: 2,
+          roomType: 'Double',
+          ratePerNight: 2000,
+        },
+      ],
+      checkInDate: new Date('01/02/2014'),
+      checkOutDate: new Date('01/03/2024'),
+      nightCount: 2,
+      grossTotal: 1000,
+      discountPercent: 0,
+      netTotal: 1000,
+      createdAt: new Date(),
     },
   ];
 }
