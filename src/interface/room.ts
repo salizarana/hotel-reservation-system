@@ -3,7 +3,7 @@ export interface Room {
   roomNumber: number;
   roomType: string;
   capacity: number;
-  pricePerNight: number;
+  ratePerNight: number;
   photos: string[];
   isBooked: boolean;
   description: string;

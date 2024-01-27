@@ -1,19 +1,21 @@
+import { Guest } from './guest';
 import { Room } from './room';
 
-export interface Invoice {
-  date: string;
-  invoiceNumber: number;
-  fullName: string;
-  phoneNumber: number;
-  email: string;
-  serialNumber: number;
-  roomNumber: number;
+interface RoomReserved {
+  id?: number;
+  roomId: number;
   roomType: string;
-  arrivalDate: string;
-  departureDate: string;
-  rate: number;
-  amount: number;
-  subTotal: number;
-  discount: number;
-  total: number;
+  ratePerNight: number;
+}
+export interface InvoiceResponse {
+  reservationId: number;
+  guest: Guest;
+  roomReserved: RoomReserved[];
+  checkInDate: Date;
+  checkOutDate: Date;
+  nightCount: number;
+  discountPercent: number;
+  grossTotal: number;
+  netTotal: number;
+  createdAt: Date;
 }
