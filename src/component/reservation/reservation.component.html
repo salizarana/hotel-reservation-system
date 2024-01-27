@@ -56,14 +56,15 @@
     <div class="wrapper">
       <div class="list">
         <h2>{{ rooms.length }} Rooms Found</h2>
-        <table>
+        <table class="room">
           <tbody>
-            <tr *ngFor="let room of rooms">
-              <td>
+            <tr class="list" *ngFor="let room of rooms">
+              <td class="room-detail">
                 <app-room [room]="room"></app-room>
               </td>
               <td>
                 <button
+                  class="select-button"
                   type="button"
                   (click)="
                     room.isSelected

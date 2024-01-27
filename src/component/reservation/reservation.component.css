@@ -52,16 +52,45 @@ input {
     margin: 50px 20px 50px 70px;
 }
 
-.list {
+/* .list {
     flex-basis: 65%;
-}
-
-.bookings {
-    flex-basis: 26%;
-}
+} */
 
 .wrapper {
     display: flex;
+    margin: 0 50px;
 
 }
+
+.select-button {
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    background-color: gold;
+    font-size: 14px;
+    transition: .4s;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.select-button:hover {
+    background: rgb(224, 191, 3);
+}
+
+.room {
+    width: 950px;
+    padding-left: 20px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.room-detail {
+    width: 700px;
+    padding-right: 40px;
+}
+
+
+
+
 

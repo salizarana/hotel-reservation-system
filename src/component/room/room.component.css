@@ -21,7 +21,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 30px 0;
-    border-top: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 }
 
 .room-img {
@@ -45,6 +45,7 @@
 
 .room-price {
     text-align: right;
+    margin-top: 25px;
 }
 
 .room-price h4 {
