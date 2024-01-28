@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Guest } from '../../interface/guest';
 
 @Component({
   selector: 'app-reservation-detail',
@@ -8,8 +9,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './reservation-detail.component.html',
   styleUrl: './reservation-detail.component.css',
 })
+
 export class ReservationDetailComponent {
-  onSubmit(getForm: NgForm) {
-    console.log(getForm.value);
-  }
+  @Input() guest: Guest;
 }

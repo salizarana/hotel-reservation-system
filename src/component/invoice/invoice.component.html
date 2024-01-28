@@ -1,6 +1,6 @@
 <div class="invoice-wrapper">
   <div class="invoice">
-    <div class="invoice-container" *ngFor="let invoice of invoice">
+    <div class="invoice-container" *ngIf="invoice">
       <div class="invoice-head">
         <div class="invoice-head-top">
           <div class="invoice-head-top-left text-start">
@@ -32,11 +32,11 @@
                 Full Name:
                 {{ invoice.guest.firstName + invoice.guest.lastName }}
               </li>
-              <li>Phone Number: {{ invoice.guest.phone }}</li>
+              <li> <label for="phone">Phone Number:</label> {{ invoice.guest.phone }}</li>
               <li>Email: {{ invoice.guest.email }}</li>
-              <li>Check In Date: {{ invoice.checkInDate }}</li>
-              <li>Check Out Date: {{ invoice.checkOutDate }}</li>
-              <li>Total Days: {{ invoice.nightCount }}</li>
+              <li>Check In Date: {{ invoice.checkInDate | date: 'yyyy-MM-dd' }}</li>
+              <li>Check Out Date: {{ invoice.checkOutDate | date: 'yyyy-MM-dd' }}</li>
+              <li>Total Days: {{ invoice.days }}</li>
             </ul>
           </div>
         </div>
@@ -57,7 +57,7 @@
                 <td>{{ i + 1 }}</td>
                 <td>{{ room.roomType }}</td>
                 <td>{{ room.ratePerNight }}</td>
-                <td>{{ room.ratePerNight * invoice.nightCount }}</td>
+                <td>{{ room.ratePerNight * invoice.days }}</td>
               </tr>
             </tbody>
           </table>
@@ -65,7 +65,7 @@
             <div class="invoice-body-info-item border-bottom">
               <div class="info-item-td text-end text-bold">Sub Total:</div>
               <div class="info-item-td text-end">
-                Rs {{ invoice.grossTotal }}
+                Rs {{ invoice.subTotal }}
               </div>
             </div>
             <div class="invoice-body-info-item border-bottom">
@@ -79,7 +79,7 @@
                 Discount Amount:
               </div>
               <div class="info-item-td text-end">
-                Rs {{ invoice.discountPercent }}
+                Rs {{ invoice.discountAmount }}
               </div>
             </div>
             <div class="invoice-body-info-item">

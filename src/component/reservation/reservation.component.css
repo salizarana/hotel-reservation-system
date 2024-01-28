@@ -59,7 +59,7 @@ input {
 .wrapper {
     display: flex;
     margin: 0 50px;
-
+    min-height: 300px;
 }
 
 .select-button {
@@ -90,6 +90,19 @@ input {
     padding-right: 40px;
 }
 
+.reserve-button {
+    border: none;
+    padding: 6px 15px;
+    background: gold;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 8px;
+    transition: .4s;
+}
+
+.reserve-button:hover {
+    transform: scale(1.1);
+}
 
 
 

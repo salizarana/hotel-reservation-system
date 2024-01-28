@@ -11,17 +11,40 @@
             <td>S.N</td>
             <td>Room Type</td>
             <td>Rate</td>
+            <td>Amount</td>
           </tr>
+            
         </thead>
         <tbody>
           <tr *ngFor="let room of rooms; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ room.roomType }}</td>
             <td>Rs {{ room.ratePerNight }}</td>
+            <td>Rs {{'Amount'}}</td>
+          </tr>
+          <tr>
+            <td colspan="4"><hr></td>
+          </tr>
+          <tr>
+            <td colspan="2">Sub-Total</td>
+            
+            <td colspan="2">{{subTotal}}</td> 
+          </tr>
+          <tr>
+            <td colspan="2">Discount%</td>
+            <td colspan="2">{{discountPercent}}%</td> 
+          </tr>
+          <tr>
+            <td colspan="2">Discount Amount</td>
+            <td colspan="2">{{discountAmount}}</td> 
+            
+          </tr>
+          <tr>
+            <td colspan="2">Net-Total</td>
+            <td colspan="2">{{subTotal - discountAmount}}</td> 
           </tr>
         </tbody>
       </table>
-      <a><button type="button">Reserve</button></a>
     </div>
   </div>
 </div>

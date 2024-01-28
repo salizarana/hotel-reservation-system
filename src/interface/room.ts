@@ -1,6 +1,6 @@
 export interface Room {
   id: number;
-  roomNumber: number;
+  roomNumber: string;
   roomType: string;
   capacity: number;
   ratePerNight: number;

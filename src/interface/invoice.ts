@@ -13,9 +13,10 @@ export interface InvoiceResponse {
   roomReserved: RoomReserved[];
   checkInDate: Date;
   checkOutDate: Date;
-  nightCount: number;
+  days: number;
   discountPercent: number;
-  grossTotal: number;
+  discountAmount: number;
+  subTotal: number;
   netTotal: number;
   createdAt: Date;
 }

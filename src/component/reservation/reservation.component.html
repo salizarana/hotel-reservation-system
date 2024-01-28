@@ -14,7 +14,7 @@
             type="date"
             placeholder="Arrival Date"
             name="checkInDate"
-            [ngModel]="searchParams.checkInDate | date : 'yyyy-MM-dd'"
+            [ngModel]="searchParams.checkInDate"
             (ngModelChange)="searchParams.checkInDate = $event"
             #checkInDate="ngModel"
             ngModel
@@ -24,7 +24,7 @@
             type="date"
             placeholder="Departure Date"
             name="checkOutDate"
-            [ngModel]="searchParams.checkOutDate | date : 'yyyy-MM-dd'"
+            [ngModel]="searchParams.checkOutDate"
             (ngModelChange)="searchParams.checkOutDate = $event"
             #checkOutDate="ngModel"
             ngModel
@@ -54,7 +54,7 @@
     </div>
 
     <div class="wrapper">
-      <div class="list">
+      <div class="list" *ngIf="rooms.length > 0">
         <h2>{{ rooms.length }} Rooms Found</h2>
         <table class="room">
           <tbody>
@@ -78,13 +78,15 @@
             </tr>
           </tbody>
         </table>
-
-        <!-- <div *ngFor="let room of rooms">
-          <app-room [room]="room"></app-room>
-        </div> -->
       </div>
-      <div class="bookings">
-        <app-bookings [rooms]="selectedRooms"></app-bookings>
+      <div *ngIf="selectedRooms.length > 0">
+        <div class="bookings">
+          <app-bookings [rooms]="selectedRooms" [days]="days"></app-bookings>
+        </div>
+        <div class="bookings">
+          <app-reservation-detail [guest]="guest"></app-reservation-detail>
+          <button class="reserve-button" (click)="reserve()">Reserve</button>
+        </div>
       </div>
     </div>
   </div>

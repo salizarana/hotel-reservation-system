@@ -1,15 +1,16 @@
 <section class="reservation-detail">
   <div class="container">
     <div class="title">Guest Information</div>
-    <form #getForm="ngForm" (ngSubmit)="onSubmit(getForm)">
+    <form #getForm="ngForm">
       <div class="guest-details">
         <div class="input-box">
           <span class="details">First Name</span>
           <input
             type="text"
-            placeholder="Enter your first name"
             name="firstName"
             #firstName="ngModel"
+            [ngModel]="guest.firstName"
+            (ngModelChange)="guest.firstName = $event"
             ngModel
             required
           />
@@ -18,9 +19,10 @@
           <span class="details">Last Name</span>
           <input
             type="text"
-            placeholder="Enter your last name"
             name="lastName"
             #lastName="ngModel"
+            [ngModel]="guest.lastName"
+            (ngModelChange)="guest.lastName = $event"
             ngModel
             required
           />
@@ -29,9 +31,10 @@
           <span class="details">Email</span>
           <input
             type="text"
-            placeholder="Enter your email"
             name="email"
             #email="ngModel"
+            [ngModel]="guest.email"
+            (ngModelChange)="guest.email = $event"
             ngModel
             required
           />
@@ -40,26 +43,25 @@
           <span class="details">Phone Number</span>
           <input
             type="text"
-            placeholder="Enter your number"
             name="phoneNumber"
             #phoneNumber="ngModel"
+            [ngModel]="guest.phone"
+            (ngModelChange)="guest.phone = $event"
             ngModel
             required
           />
         </div>
         <div class="input-box">
-          <span class="details">Remarks</span>
-          <textarea
+          <span class="details">Address</span>
+          <input
             class="remarks"
-            placeholder="Type here..."
             name="remarks"
             #remarks="ngModel"
+            [ngModel]="guest.address"
+            (ngModelChange)="guest.address = $event"
             ngModel
-          ></textarea>
+          />
         </div>
-      </div>
-      <div class="button">
-        <input type="submit" value="Reserve" />
       </div>
     </form>
   </div>
